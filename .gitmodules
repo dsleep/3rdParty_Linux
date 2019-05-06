@@ -7,3 +7,18 @@
 [submodule "ceres/source"]
 	path = ceres/source
 	url = https://github.com/dsleep/ceres-solver.git
+[submodule "suitesparse/source"]
+	path = suitesparse/source
+	url = https://github.com/dsleep/suitesparse-metis-for-windows.git
+[submodule "eigen/source"]
+	path = eigen/source
+	url = https://github.com/dsleep/eigen-git-mirror.git
+[submodule "opencv/source"]
+	path = opencv/source
+	url = https://github.com/dsleep/opencv.git
+[submodule "gflags/source"]
+	path = gflags/source
+	url = https://github.com/dsleep/gflags.git
+[submodule "glog/source"]
+	path = glog/source
+	url = https://github.com/dsleep/glog.git
