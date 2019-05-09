@@ -15,3 +15,11 @@ sudo apt-get install cmake
 CLONE IT
 git clone --recursive https://github.com/dsleep/3rdParty_Linux.git
 
+Move into directory...
+cd 3rdParty_Linux
+
+Allows script execution
+chmod +x build3rdParty.sh
+
+Execute Script
+./build3rdParty.sh
