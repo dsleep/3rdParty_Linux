@@ -1,25 +1,31 @@
 # 3rdParty_Linux
 
-UBUNTU  
+# UBUNTU  
 
-BASE STANDARD INSTALLS  
+sudo apt-get update
+sudo apt-get upgrade
 
-sudo apt-get update  
-sudo apt-get install build-essential  
-sudo apt-get install libxml2  
-sudo apt-get install subversion  
-sudo apt-get install git  
-sudo apt-get install wget  
-sudo apt-get install cmake  
+sudo apt-get install build-essential checkinstall cmake pkg-config yasm
+sudo apt-get install git subversion gfortran
 
-CLONE IT  
+# install cuda https://developer.nvidia.com/cuda-zone
+
+# CUDA
+# - only installed toolkit and driver nothing else
+# - sometimes driver conflicts example solution "https://linuxconfig.org/how-to-disable-nouveau-nvidia-driver-on-ubuntu-18-04-bionic-beaver-linux"
+
+sudo apt-get install qt4-default libgtk2.0-dev libtbb-dev libblas-dev
+sudo apt-get install libpng-dev libxml2-dev
+sudo apt-get install python-dev python-pip python3-dev python3-pip
+
+# grab our GIT
 git clone --recursive https://github.com/dsleep/3rdParty_Linux.git
 
-Move into directory...  
+# Move into directory...  
 cd 3rdParty_Linux
 
-Allows script execution  
+# Allows script execution  
 chmod +x build3rdParty.sh
 
-Execute Script  
+# Execute Script  
 ./build3rdParty.sh
