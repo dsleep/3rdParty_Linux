@@ -59,9 +59,7 @@ ThirdPartyPath = os.path.abspath( "..\\")
 ThirdPartyForwardPath = ThirdPartyPath.replace( "\\", "/" )
 ScriptPath = get_script_path()
 
-print("CMakePath: " + CMakePath)
 print("ThirdPartyPath: " + ThirdPartyPath)
-print("VSBinPath: " + VSBinPath)
 
 with open('ModulesToBuild.json') as json_file:
 	data = json.load(json_file)
