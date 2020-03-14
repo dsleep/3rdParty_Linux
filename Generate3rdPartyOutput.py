@@ -45,7 +45,7 @@ def RunAndWait(ProgramLaunch, LogName=''):
 		if output == '' and process.poll() is not None:
 			break
 		if output:
-			print(output, end = '')
+			print(output) #, end = '')
 			if LogFile:
 				LogFile.write(output)
 	rc = process.poll()
