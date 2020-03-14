@@ -9,8 +9,6 @@ import requests
 import glob
 from awsauth import S3Auth
 
-from winreg import *
-	
 def get_script_path():
     return os.path.dirname(os.path.realpath(__file__))
 	
@@ -79,8 +77,6 @@ with open('ModulesToBuild.json') as json_file:
 		
 		OutputPath = ThirdPartyPath + "/" + p['LocalPath']
 		CMakeLocalLibInstall = OutputPath + "\\" + CMakeLibInstall
-		
-		#cmake -G "Unix Makefiles" -Bbuild -Hsource -DCMAKE_INSTALL_PREFIX="${THIRDPARTYROOT}/${CURRENT_BUILD}" -DCMAKE_INSTALL_LIBDIR="${THIRDPARTYROOT}/${CURRENT_BUILD}/lib" -DBUILD_TESTING=false 
 		
 		LocalCMakeArgs = "-G \"Unix Makefiles\" -Bbuild -Hsource " + p['CMakeArgs'] + " -DThirdPartyPath:PATH=\"" + ThirdPartyPath + "\" -C \"" + ScriptPath + "/CMakeCachePreload.cmake \""
 		LocalCMakeArgs = LocalCMakeArgs.replace( "$OutputPath", OutputPath )
