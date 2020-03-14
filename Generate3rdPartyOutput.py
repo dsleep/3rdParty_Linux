@@ -80,9 +80,9 @@ with open('ModulesToBuild.json') as json_file:
 		OutputPath = ThirdPartyPath + "/" + p['LocalPath']
 		CMakeLocalLibInstall = OutputPath + "\\" + CMakeLibInstall
 		
-		cmake -G "Unix Makefiles" -Bbuild -Hsource -DCMAKE_INSTALL_PREFIX="${THIRDPARTYROOT}/${CURRENT_BUILD}" -DCMAKE_INSTALL_LIBDIR="${THIRDPARTYROOT}/${CURRENT_BUILD}/lib" -DBUILD_TESTING=false 
+		#cmake -G "Unix Makefiles" -Bbuild -Hsource -DCMAKE_INSTALL_PREFIX="${THIRDPARTYROOT}/${CURRENT_BUILD}" -DCMAKE_INSTALL_LIBDIR="${THIRDPARTYROOT}/${CURRENT_BUILD}/lib" -DBUILD_TESTING=false 
 		
-		LocalCMakeArgs = p['CMakeArgs'] + " -DThirdPartyPath:PATH=\"" + ThirdPartyPath + "\" -C \"" + ScriptPath + "/CMakeCachePreload.cmake \""
+		LocalCMakeArgs = "-G \"Unix Makefiles\" -Bbuild -Hsource " + p['CMakeArgs'] + " -DThirdPartyPath:PATH=\"" + ThirdPartyPath + "\" -C \"" + ScriptPath + "/CMakeCachePreload.cmake \""
 		LocalCMakeArgs = LocalCMakeArgs.replace( "$OutputPath", OutputPath )
 		LocalCMakeArgs = LocalCMakeArgs.replace( "$CMakeLibInstall", CMakeLibInstall )
 		LocalCMakeArgs = LocalCMakeArgs.replace( "\\", "/" )
