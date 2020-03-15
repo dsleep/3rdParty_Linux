@@ -26,3 +26,6 @@
 	path = lz4/source
 	url = https://github.com/dsleep/lz4.git
 	branch = dev
+[submodule "libjpeg-turbo/source"]
+	path = libjpeg-turbo/source
+	url = https://github.com/dsleep/libjpeg-turbo.git
