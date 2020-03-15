@@ -83,8 +83,8 @@ with open('ModulesToBuild.json') as json_file:
 		LocalCMakeArgs = LocalCMakeArgs.replace( "\\", "/" )
 		LocalCMakeArgs = LocalCMakeArgs.replace( "$3rdPartyForwardPath", ThirdPartyForwardPath )
 		LocalCMakeArgs = LocalCMakeArgs.replace( "$CMakeLocalLibInstall", CMakeLocalLibInstall )
-		LocalCMakeArgs = LocalCMakeArgs + " -Bbuild -Hsource"
-			
+		LocalCMakeArgs = LocalCMakeArgs + " -Bbuild -Hsource -DCMAKE_BUILD_TYPE=Release"
+					
 		ExecutionString = "cmake" + " " + LocalCMakeArgs
 		print("CMAKE CALL: " + ExecutionString)
 		RunAndWait(ExecutionString, "../" + p['ModuleName'] + "_CMAKE" )
