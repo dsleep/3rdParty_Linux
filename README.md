@@ -25,7 +25,7 @@ git clone --recursive https://github.com/dsleep/3rdParty_Linux.git
 cd 3rdParty_Linux  
 
 ## Allows script execution  
-chmod +x build3rdParty.sh  
+chmod +x Generate3rdPartyOutput.sh  
 
 ## Execute Script  
-./build3rdParty.sh  
+./Generate3rdPartyOutput.sh  
