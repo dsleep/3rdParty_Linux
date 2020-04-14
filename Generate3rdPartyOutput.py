@@ -59,8 +59,11 @@ ThirdPartyPath = os.path.abspath( "../") + "/3rdParty"
 ThirdPartyForwardPath = ThirdPartyPath.replace( "\\", "/" )
 ScriptPath = get_script_path()
 CMakeLibInstall = "lib"
+OSCPUCount = os.cpu_count()
 
 print("ThirdPartyPath: " + ThirdPartyPath)
+print("CPU Count: " + OSCPUCount)
+
 
 with open('ModulesToBuild.json') as json_file:
 	data = json.load(json_file)
@@ -89,7 +92,7 @@ with open('ModulesToBuild.json') as json_file:
 		print("CMAKE CALL: " + ExecutionString)
 		RunAndWait(ExecutionString, "../" + p['ModuleName'] + "_CMAKE" )
 				
-		MakeExecutionString = "make --directory build install"
+		MakeExecutionString = "make -j" + OSCPUCount + " --directory build install"
 		print("MAKE CALL: " + MakeExecutionString) 
 		RunAndWait(MakeExecutionString, "../" + p['ModuleName'] + "_BUILD" )
 		
