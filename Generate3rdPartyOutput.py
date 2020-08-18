@@ -57,7 +57,7 @@ def RunAndWait(ProgramLaunch, LogName=''):
 	
 	return "DONE"					
 
-ThirdPartyPath = os.path.abspath( "../") + "/3rdParty"
+ThirdPartyPath = os.path.abspath( "../") + "/3rdParty/binaries"
 ThirdPartyForwardPath = ThirdPartyPath.replace( "\\", "/" )
 ScriptPath = get_script_path()
 CMakeLibInstall = "lib"
