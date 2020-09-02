@@ -39,7 +39,7 @@ def RunAndWait(ProgramLaunch, LogName=''):
 	if LogName != '':
 		LogFile = open(LogName + ".log.txt","w")
 	
-	process = subprocess.Popen(ProgramLaunch, bufsize=2048, shell=True, stdout=subprocess.PIPE, close_fds=True)
+	process = subprocess.Popen(ProgramLaunch, bufsize=2048, shell=True, stdout=subprocess.PIPE, encoding='utf8', close_fds=True)
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
