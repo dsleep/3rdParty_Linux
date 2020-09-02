@@ -43,7 +43,7 @@
 		{
 			"ModuleName": "opencv",
 			"LocalPath": "opencv",
-			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTS=false -DBUILD_PERF_TESTS=false -DWITH_QT=true -DWITH_OPENGL=true "
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTS=false -DBUILD_PERF_TESTS=false -DWITH_QT=true -DWITH_OPENGL=true -DWITH_OPENJPEG=true -DOpenJPEG_DIR=\"$3rdPartyForwardPath/openjpeg\" "
 		},
 		{
 			"ModuleName": "suitesparse",
