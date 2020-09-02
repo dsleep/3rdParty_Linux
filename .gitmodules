@@ -29,3 +29,6 @@
 [submodule "libjpeg-turbo/source"]
 	path = libjpeg-turbo/source
 	url = https://github.com/dsleep/libjpeg-turbo.git
+[submodule "openjpeg/source"]
+	path = openjpeg/source
+	url = https://github.com/dsleep/openjpeg.git

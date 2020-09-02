@@ -36,6 +36,11 @@
 			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TOOLS=false" 
 		},
 		{
+			"ModuleName": "openjpeg",
+			"LocalPath": "openjpeg",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_STATIC_LIBS=ON"
+		},
+		{
 			"ModuleName": "opencv",
 			"LocalPath": "opencv",
 			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTS=false -DBUILD_PERF_TESTS=false -DWITH_QT=true -DWITH_OPENGL=true "
