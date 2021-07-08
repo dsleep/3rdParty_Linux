@@ -1,0 +1,8 @@
+Configuration for x264
+./configure --prefix=$HOME/x264/built --enable-shared --disable-cli
+
+Configuration for libav
+./configure --prefix=/built --enable-libx264 --enable-gpl --enable-pic --extra-cflags="-I$HOME/x264/built/include/" --logfile="libavconfig.txt" --disable-programs
+
+useful to find stuff...
+sudo find / -type f -iname "libav*"
