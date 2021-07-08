@@ -32,3 +32,9 @@
 [submodule "openjpeg/source"]
 	path = openjpeg/source
 	url = https://github.com/dsleep/openjpeg.git
+[submodule "libav/source"]
+	path = libav/source
+	url = https://github.com/dsleep/libav.git
+[submodule "x264/source"]
+	path = x264/source
+	url = https://github.com/dsleep/x264.git
