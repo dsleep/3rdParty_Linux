@@ -5,11 +5,10 @@ from zipfile import ZipFile
 import sys
 import os
 import json
-import requests
 import glob
 import multiprocessing
 
-from awsauth import S3Auth
+
 
 def get_script_path():
     return os.path.dirname(os.path.realpath(__file__))

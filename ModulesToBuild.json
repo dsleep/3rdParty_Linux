@@ -4,17 +4,7 @@
 			"ModuleName": "eigen",
 			"LocalPath": "eigen",
 			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTING=false"
-		},
-		{
-			"ModuleName": "gflags",
-			"LocalPath": "gflags",
-			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DBUILD_SHARED_LIBS=TRUE -DBUILD_STATIC_LIBS=TRUE -DLIB_INSTALL_DIR=\"$CMakeLibInstall\" "
-		},
-		{
-			"ModuleName": "glog",
-			"LocalPath": "glog",
-			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTING=False "
-		},
+		},		
 		{
 			"ModuleName": "libiconv",
 			"LocalPath": "libiconv",
@@ -50,17 +40,12 @@
 			"LocalPath": "suitesparse",
 			"CMakeArgs": " -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_METIS=false"
 		},
-
 		{
 			"ModuleName": "ceres",
 			"LocalPath": "ceres",
-			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_EXAMPLES=false -DGFLAGS=true -DBUILD_TESTING=false -DSUITESPARSE=true -DSuiteSparse_DIR=\"$3rdPartyForwardPath/suitesparse\" -DGLOG_INCLUDE_DIR_HINTS=\"$3rdPartyForwardPath/glog/include\" -DGLOG_LIBRARY_DIR_HINTS=\"$3rdPartyForwardPath/glog/$CMakeLibInstall\" -DEigen3_DIR=\"$3rdPartyForwardPath/eigen\" -DGFLAGS_INCLUDE_DIR_HINTS=\"$3rdPartyForwardPath/gflags/include\" -DGFLAGS_LIBRARY_DIR_HINTS=\"$3rdPartyForwardPath/gflags/$CMakeLibInstall\" "
-		},
-		{
-			"ModuleName": "websocketpp",
-			"LocalPath": "websocketpp",
-			"CMakeArgs": " -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_METIS=false"
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_EXAMPLES=false -DGFLAGS=false -DBUILD_TESTING=false -DMINIGLOG=true  -DSUITESPARSE=true -DSuiteSparse_DIR=\"$3rdPartyForwardPath/suitesparse\" -DEigen3_DIR=\"$3rdPartyForwardPath/eigen\" "
 		}
+		
 	],
 	"SKIPTHESEHACK": [			
 		{
@@ -82,6 +67,21 @@
 			"ModuleName": "pcl",
 			"LocalPath": "pcl",
 			"CMakeArgs": " -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DPCL_SHARED_LIBS=TRUE -DPCL_BUILD_WITH_BOOST_DYNAMIC_LINKING_WIN32=TRUE -DBUILD_EXAMPLES=FALSE -DWITH_QHULL=TRUE -Dflann_DIR=\"$3rdPartyForwardPath/flann/lib/cmake/flann\" -DEIGEN_INCLUDE_DIR=\"$3rdPartyForwardPath/eigen/include/eigen3\" -DWITH_VTK=TRUE -DVTK_DIR=\"$3rdPartyForwardPath/VTK/lib/win64/vc16/cmake/vtk-8.90\" -DGLEW_INCLUDE_DIR=\"$3rdPartyForwardPath/glew/include\" -DGLEW_LIBRARY_RELEASE=\"$3rdPartyForwardPath/glew/lib/Release/x64/glew32s.lib\" -DGLEW_LIBRARY_DEBUG=\"$3rdPartyForwardPath/glew/lib/Release/x64/glew32s.lib\" -DThirdPartyRootDir=\"$3rdPartyForwardPath\" -DLIB_POST_FIX=\"$CMakeLibInstall\" -DBUILD_apps=TRUE -DBUILD_apps_point_cloud_editor=TRUE -DBUILD_apps_cloud_composer=TRUE" 
-		} 	
+		},
+		{
+			"ModuleName": "gflags",
+			"LocalPath": "gflags",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DBUILD_SHARED_LIBS=TRUE -DBUILD_STATIC_LIBS=TRUE -DLIB_INSTALL_DIR=\"$CMakeLibInstall\" "
+		},
+		{
+			"ModuleName": "glog",
+			"LocalPath": "glog",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTING=False "
+		},
+		{
+			"ModuleName": "websocketpp",
+			"LocalPath": "websocketpp",
+			"CMakeArgs": " -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_METIS=false"
+		}
 	]
 }
