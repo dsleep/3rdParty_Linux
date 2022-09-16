@@ -32,3 +32,9 @@
 [submodule "x264/source"]
 	path = x264/source
 	url = https://github.com/dsleep/x264.git
+[submodule "openssl"]
+	path = openssl
+	url = https://github.com/openssl/openssl.git
+[submodule "curl"]
+	path = curl
+	url = https://github.com/curl/curl.git
