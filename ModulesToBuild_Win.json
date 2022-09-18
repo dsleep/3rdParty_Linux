@@ -1,0 +1,82 @@
+{
+	"CMakePlatform" : "-G \"Visual Studio 16 2019\" -A \"x64"
+	"modules": [	
+		{
+			"ModuleName": "eigen",
+			"LocalPath": "eigen",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTING=false"
+		}
+		{
+			"ModuleName": "libiconv",
+			"LocalPath": "libiconv",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" " 
+		},
+		{
+			"ModuleName": "libjpeg-turbo",
+			"LocalPath": "libjpeg-turbo",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLocalLibInstall\" "
+		},
+		{
+			"ModuleName": "libxml2",
+			"LocalPath": "libxml2",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_INCLUDEDIR=\"$OutputPath/include\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DLIBICONV_INCLUDE_DIR=\"$3rdPartyForwardPath/libiconv/include\" -DLIBICONV_LIBRARY=\"$3rdPartyForwardPath/libiconv/$CMakeLibInstall\" "
+		},
+		{
+			"ModuleName": "opencv",
+			"LocalPath": "opencv",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTS=false -DBUILD_PERF_TESTS=false -DWITH_QT=true -DWITH_OPENGL=true -DOPENCV_EXTRA_MODULES_PATH=\"$3rdPartyForwardPath/opencv_contrib/modules\" "
+		},
+		{
+			"ModuleName": "suitesparse",
+			"LocalPath": "suitesparse",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_METIS=false"
+		},
+		{
+			"ModuleName": "ceres",
+			"LocalPath": "ceres",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_EXAMPLES=false -DGFLAGS=false -DBUILD_TESTING=false -DSUITESPARSE=true -DSuiteSparse_DIR=\"$3rdPartyForwardPath/suitesparse\"  -DMINIGLOG=true"
+		},	
+		{
+			"ModuleName": "lz4",
+			"LocalPath": "lz4",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TOOLS=false" 
+		},	
+		{
+			"ModuleName": "jsoncpp",
+			"LocalPath": "jsoncpp",
+			"CMakeArgs": "-DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TOOLS=false" 
+		}
+	],
+	"devmodules": [
+		{
+			"ModuleName": "qhull",
+			"LocalPath": "qhull",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DLIB_INSTALL_DIR=\"$CMakeLibInstall\" " 
+		},
+		{
+			"ModuleName": "flann",
+			"LocalPath": "flann",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTS=false -DBUILD_EXAMPLES=false -DLZ4_INCLUDE_DIR=\"$3rdPartyForwardPath/lz4/include\" -DLZ4_LIBRARY=\"$3rdPartyForwardPath/lz4/$CMakeLibInstall\" -DBUILD_PYTHON_BINDINGS=false -DBUILD_MATLAB_BINDINGS=false" 
+		},		
+		{
+			"ModuleName": "VTK",
+			"LocalPath": "VTK",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DVTK_MODULE_ENABLE_VTK_glew=YES -DVTK_MODULE_ENABLE_VTK_opengl=YES -DVTK_BUILD_TESTING=OFF -DVTK_GROUP_ENABLE_Qt=YES -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES -DVTK_MODULE_ENABLE_VTK_GUISupportQtOpenGL=YES -DVTK_MODULE_ENABLE_VTK_RenderingQt=YES -DVTK_MODULE_ENABLE_VTK_ViewsQt=YES -DVTK_MODULE_ENABLE_VTK_ViewsQt=YES -DVTK_MODULE_ENABLE_VTK_RenderingContextOpenGL2=YES -DVTK_MODULE_ENABLE_VTK_RenderingOpenGL2=YES -DBUILD_SHARED_LIBS=FALSE" 
+		},
+		{
+			"ModuleName": "pcl",
+			"LocalPath": "pcl",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DPCL_SHARED_LIBS=TRUE -DPCL_BUILD_WITH_BOOST_DYNAMIC_LINKING_WIN32=TRUE -DBUILD_EXAMPLES=FALSE -DWITH_QHULL=TRUE -Dflann_DIR=\"$3rdPartyForwardPath/flann/lib/cmake/flann\" -DEIGEN_INCLUDE_DIR=\"$3rdPartyForwardPath/eigen/include/eigen3\" -DWITH_VTK=TRUE -DVTK_DIR=\"$3rdPartyForwardPath/VTK/lib/win64/vc15/cmake/vtk-8.90\" -DGLEW_INCLUDE_DIR=\"$3rdPartyForwardPath/glew/include\" -DGLEW_LIBRARY_RELEASE=\"$3rdPartyForwardPath/glew/lib/Release/x64/glew32s.lib\" -DGLEW_LIBRARY_DEBUG=\"$3rdPartyForwardPath/glew/lib/Release/x64/glew32s.lib\" -DThirdPartyRootDir=\"$3rdPartyForwardPath\" -DLIB_POST_FIX=\"$CMakeLibInstall\" -DBUILD_apps=TRUE -DBUILD_apps_point_cloud_editor=TRUE -DBUILD_apps_cloud_composer=TRUE -DBUILD_visualization=TRUE" 
+		},
+		{
+			"ModuleName": "gflags",
+			"LocalPath": "gflags",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DLIB_INSTALL_DIR=\"$CMakeLibInstall\" "
+		},
+		{
+			"ModuleName": "glog",
+			"LocalPath": "glog",
+			"CMakeArgs": "-G \"$CMakeVSString\" -B$VSMakeBuildFolder -Hsource -DCMAKE_INSTALL_PREFIX=\"$OutputPath\" -DCMAKE_INSTALL_LIBDIR=\"$CMakeLibInstall\" -DBUILD_TESTING=False "
+		}
+	]
+}
